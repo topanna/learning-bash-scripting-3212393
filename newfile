@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+
+#!/usr/bin/env bash
+
+printf "Date: $(date)\n"
+printf "Machine: $(uname)\n"
+printf "Kernel: $(uname -r)\n"
+printf "Disk space:\n"
+printf '%s\n' "$(df)"

@@ -1,0 +1,47 @@
+#!/usr/bin/env bash
+
+
+
+declare -i moves=0
+declare -i i
+
+roll() {
+    
+    dice=$((RANDOM % 6 + 1))
+    
+    ((moves++))
+    
+    echo ROUND $i
+    echo Dice = $dice
+    echo Available moves = $moves
+    
+    
+    
+    
+    
+    if [ $moves -gt 0 ]
+    then
+        if [ $dice == 6 ]
+        then
+            echo "You got extra move!"
+        elif [ $dice == 1 ]
+        then
+            echo "You lost a move..."
+            ((moves=moves-2))
+        else
+            echo "Roll again."
+            ((moves=moves-1))
+        fi
+    else
+        echo "STALL"
+    fi
+    
+    
+    
+    
+}
+
+for i in {1..10}
+do
+    roll
+done
